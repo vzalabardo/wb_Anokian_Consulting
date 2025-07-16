@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anokian Consulting</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="favicon.JPG">
+</head>
+<style>
+    /* styles.css */
+
+:root {
+  --primary-color: #051972;
+  --secondary-color: #F57F18;
+  --text-color: #474747;
+  --background-color: #ffffff;
+  --font-family-base: 'Helvetica Neue', Arial, sans-serif;
+  --spacing-unit: 1rem;
+  --container-max-width: 1200px;
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-unit) 0;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--background-color);
+  border-bottom: 1px solid #eee;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-unit);
+}
+
+.main-nav a {
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: var(--primary-color) url('') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subline {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Services Section */
+.services {
+  padding: 3rem 0;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.grid.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+  margin: 0 auto 1rem;
+  display: block;
+  width: auto;
+}
+
+
+.service-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--primary-color);
+}
+
+.service-card p {
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+/* Call to Action */
+.cta {
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  margin: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+/* Partners Section */
+.partners {
+  padding: 3rem 0;
+  background-color: #f5f5f5;
+}
+
+.partners h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.grid.four-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Social Media */
+.social {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.social h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.social a {
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--background-color);
+  border-top: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav a {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+.service-card .btn {
+  margin-top: auto;
+}
+.hero .btn-hero {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  margin-top: 1.5rem;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anokian Consulting</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">
+          <img src="http://www.anokianconsulting.com/s/misc/logo.jpg?t=1750084686" alt="Anokian Consulting Logo">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" class="active">ESPAÑOL</a></li>
+          <li><a href="/english/">ENGLISH</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Soluciones para internacionalizar tu empresa</h1>
+      <p class="subline">Contabilidad &middot; Fiscalidad &middot; Asesoramiento Laboral</p>
+      <p class="subline">Creación de Empresas &middot; Internacionalización &middot; Consultoría y Gestión de Negocio</p>
+      <!-- Hero CTA Button -->
+      <a href="/contacto/" class="btn btn-hero">Obtén tu presupuesto a medida</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <h2>Líneas de Negocio</h2>
+      <div class="grid two-col">
+        <!-- Nacional Card -->
+        <div class="service-card">
+          <img src="http://www.anokianconsulting.com/s/cc_images/cache_20782659.jpg?t=1455034540" alt="Nacional">
+          <h3>Nacional</h3>
+          <p><strong>Como servicio base</strong>, realizamos la gestión integral de cumplimiento de la normativa fiscal, mercantil, contable y laboral española tanto para PYMES como autónomos. Ofrecemos un servicio personalizado, atendiendo las consultas particulares de cada cliente y ajustándonos a sus requerimientos.</p>
+          <p><br></p>
+          <a href="/contacto/" class="btn btn-secondary">Solicitar presupuesto</a>
+        </div>
+        <!-- Internacional Card -->
+        <div class="service-card">
+          <img src="http://www.anokianconsulting.com/s/cc_images/cache_20782722.jpg?t=1510605149" alt="Internacional">
+          <h3>Internacional</h3>
+          <p><strong>Nuestro Core Business</strong>, lo que nos diferencia y nos permite aportar valor:</p>
+          <p>Acompañamos a las PYMES locales en su proceso de internacionalización y ayudamos a las PYMES extranjeras a expandir su negocio en España. Cubrimos las necesidades de planificación y gestión de manera ágil, moderna, eficiente y con una red de despachos profesionales en todo el mundo.</p>
+          <p><br></p>
+          <a href="/contacto/" class="btn btn-secondary">Solicitar presupuesto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container cta-container">
+      <a href="/nosotros/" class="btn btn-primary">Sobre Nosotros</a>
+      <a href="/contacto/" class="btn btn-secondary">Solicitar Presupuesto</a>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="partners">
+    <div class="container">
+      <h2>Colaboradores y Miembros</h2>
+      <div class="grid four-col">
+        <div class="partner"><img src="http://www.anokianconsulting.com/s/cc_images/cache_41856585.png?t=1647976670" alt="Miembro"></div>
+        <div class="partner"><img src="http://www.anokianconsulting.com/s/cc_images/cache_41856586.jpg?t=1647976498" alt="Asociado"></div>
+        <div class="partner"><img src="http://www.anokianconsulting.com/s/cc_images/cache_41856587.png?t=1647976602" alt="Colaborador"></div>
+        <div class="partner"><img src="http://www.anokianconsulting.com/s/cc_images/cache_41856598.png?t=1647976435" alt="Soporte Institucional"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media -->
+  <section class="social">
+    <div class="container">
+      <h2>Síguenos en</h2>
+      <a href="https://es.linkedin.com/company/anokian-consulting-s-l-?trk=public_profile_topcard-current-company" target="_blank">
+        <img src="http://www.anokianconsulting.com/s/cc_images/cache_41856592.png?t=1647976557" alt="LinkedIn">
+      </a>
+      <a href="https://es-es.facebook.com/pages/category/Consulting-Agency/Anokian-Consulting-1724217531000532/" target="_blank">
+        <img src="http://www.anokianconsulting.com/s/cc_images/cache_41856588.jpg?t=1647976562" alt="Facebook">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <nav class="footer-nav">
+        <a href="/sitemap/">Mapa del Sitio</a>
+        <a href="/aviso-legal/">Aviso Legal</a>
+      </nav>
+      <p>© ANOKIAN CONSULTING, S.L.</p>
+    </div>
+  </footer>
+</body>
+</html>
